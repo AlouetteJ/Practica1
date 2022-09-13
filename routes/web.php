@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contacto/{codigo?}', function($codigo=null) {
-    if($codigo == 1234){
-        $nombre = 'Alondra';
-        $correo = 'alondra.almazan9929@alumnos.udg.mx';
-    }
-    else{
-        $nombre = null;
-        $correo = null;
-    }
-    return view('paginas.contacto');
-});
+Route::get('/contacto/{codigo?}',[ControllerPage::class,'formulario']);
+Route::post('/contacto-form-enviada',[ControllerPage::class,'recibeFormContacto']);
+
