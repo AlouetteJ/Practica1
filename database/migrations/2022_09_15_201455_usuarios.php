@@ -15,9 +15,9 @@ class Usuarios extends Migration
     {
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('correo');
-            $table->text('mensaje');
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
             $table->timestamps();
         });
     }
