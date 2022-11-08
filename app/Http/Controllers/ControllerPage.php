@@ -9,25 +9,25 @@ class ControllerPage extends Controller
 {
     public function formulario($codigo=null){
         if($codigo == 1234){
-            $name = 'Alondra';
-            $email = 'alondra.almazan9929@alumnos.udg.mx';
+            $nombre = 'Alondra';
+            $correo = 'alondra@test.com';
         }
         else{
-            $name = null;
-            $email = null;
+            $nombre = null;
+            $correo = null;
         }
-        return view('paginas.contacto', compact('name', 'email'));
+        return view('paginas.contacto', compact('nombre', 'correo'));
     }
 
     public function recibeFormContacto(Request $request)
     {
          $request->validate([
-             'name' => ['required','min:3','max:40'],
-             'email' => ['required','email'],
-             'message' => ['required','min:1','max:255']
+             'nombre' => 'required|max:40',
+             'correo' => 'required',
+             'mensaje' => 'required|min:5|max:255',
          ]);
          
-        // dd($request->all());
+        //dd($request->all());
 
         // dd(
         //     $request->all(), //Toda la informacion

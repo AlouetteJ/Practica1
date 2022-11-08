@@ -17,35 +17,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <h2>Contact Us</h2> Got a question ? Feedback? Awesome! 
-                    <p> Send your message in the form below and we will get back to you as early as possible. </p>
+                    <h2>Contactanos</h2> ¿Tienes alguna pregunta? ¿Comentarios? ¡Vamos! 
+                    <p> Envia tu mensaje en el formulario debajo y nos contactaremos contigo lo antes posible. </p>
                     <form role="form" method="post" id="reused_form" action="/contacto-form-enviada">
                         @csrf
                         <div class="form-group">
-                            <label for="name"> Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{old('name') ?? $name }}">
-                            @error('name')
+                            <label for="nombre"> Nombre:</label>
+                            <input type="text" class="form-control" id="name" name="nombre" value="{{old('nombre') ?? $nombre }}">
+                            @error('nombre')
                                 <i>{{$message}}</i>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="email"> Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{old('email') ?? $email }}" >
-                            @error('email')
+                            <label for="correo"> Correo:</label>
+                            <input type="email" class="form-control" id="email" name="correo" value="{{old('correo') ?? $correo }}" >
+                            @error('correo')
                                 <i>{{$message}}</i>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="message"> Message:</label>
-                            <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7">{{old('message')}}</textarea>
-                            @error('message')
+                            <label for="mensaje"> Mensaje:</label>
+                            <textarea class="form-control" type="textarea" name="mensaje" id="message" placeholder="¿Que deseas comentar?" maxlength="6000" rows="7">{{old('mensaje')}}</textarea>
+                            @error('mensaje')
                                 <i>{{$message}}</i>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-lg btn-success pull-right" id="btnContactUs">Post It! &rarr;</button>
+                        <button type="submit" class="btn btn-lg btn-success pull-right" id="btnContactUs">Enviar! &rarr;</button>
                     </form>
-                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
-                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Tu mensaje se envio con exito!</h3> </div>
+                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Hubo un problema al enviar tu mensaje. </div>
                 </div>
             </div>
         </div>
