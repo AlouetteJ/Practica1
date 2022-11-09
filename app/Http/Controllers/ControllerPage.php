@@ -22,8 +22,8 @@ class ControllerPage extends Controller
     public function recibeFormContacto(Request $request)
     {
          $request->validate([
-             'nombre' => 'required|max:40',
-             'correo' => 'required',
+             'nombre' => 'required|min:3|max:40',
+             'correo' => 'required|email',
              'mensaje' => 'required|min:5|max:255',
          ]);
          

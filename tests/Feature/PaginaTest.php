@@ -26,7 +26,7 @@ class PaginaTest extends TestCase
     {
         $response = $this->post('/contacto-form-enviada', [
             'nombre' => ' ',
-            'correo' => 'correo@ejemplo',
+            'correo' => 'corre',
             'mensaje' => 'ah',
         ]);
 
