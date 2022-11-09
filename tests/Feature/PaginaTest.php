@@ -18,6 +18,7 @@ class PaginaTest extends TestCase
         $response = $this->get('/contacto');
 
         $response->assertStatus(200);
+        $response->assertSeeText(['Nombre','Correo','Mensaje']);
     }
 
     /** @test */
@@ -35,7 +36,7 @@ class PaginaTest extends TestCase
             'mensaje',
         ]);
 
-    }
+    } 
 
     /** @test */
     public function prellenado_formulario()
